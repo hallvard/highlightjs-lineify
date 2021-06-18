@@ -6,7 +6,7 @@ export default {
     {
       file: 'dist/highlightjs-lineify.min.js',
       format: 'iife',
-      name: "hljsLineifyPlugin",
+      name: "LineifyPlugin",
       interop: "default",
       globals: {
       },
