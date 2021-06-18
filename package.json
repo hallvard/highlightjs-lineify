@@ -1,0 +1,24 @@
+{
+  "name": "@highlightjs/lineify-plugin",
+  "version": "0.9.0",
+  "description": "Highlight.js Lineify Plugin",
+  "main": "dist/highlightjs-lineify.min.js",
+  "module": "dist/highlightjs-lineify.esm.min.js",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish": "npm publish --access public --tag next"
+  },
+  "type": "module",
+  "author": "Hallvard Trætteberg <hal@ntnu.no>",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "rollup": "^2.52.1"
+  },
+  "dependencies": {
+  },
+  "files": [
+    "dist",
+    "src"
+  ]
+}

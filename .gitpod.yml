@@ -1,0 +1,3 @@
+tasks:
+  - init: npm install rollup --save-dev
+  - command: npx rollup --config
