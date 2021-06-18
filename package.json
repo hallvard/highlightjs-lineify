@@ -15,8 +15,7 @@
   "devDependencies": {
     "rollup": "^2.52.1"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "files": [
     "dist",
     "src"
