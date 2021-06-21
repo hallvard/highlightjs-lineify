@@ -38,3 +38,13 @@ function lineifyCallback(element, lineElements, config) {
 ```
 
 Here we iterator over all line span elements and insert a new span element with the line number, as a new first element in the line.
+
+Certain use cases, such as adding line numbers or marking specific lines with a CSS class, are expected to be common, and are therey supported more directly by using attributes on the parent `code`(or other) element.
+
+### Adding line numbers
+
+Line numbers can be added by setting the `lineify-line-number-format` attribute. A line number will be inserted as the textual content of a separate `span` element with class `lineify-line` at the beginning of each line. The text format is indicated by the attribute value, where `%s` will be replaced by the actual line number (1 - number of lines). E.g. if the value is `%s&#9;` the line number will be followed by a tab character.
+
+### Marking lines with CSS class
+
+To mark specific lines with a CSS class, you can add an attribute (still in the parent element) with a name on the format `lineify-%s-lines` where `%s` is (replaced with the) the CSS class and the value is a comma-separated list of line numbers (1 - number of lines). E.g. `lineify-added-lines="1,4,5"` will add `added` to the `class` attribute of element corresponding to lines `1`, `4` and `5`.

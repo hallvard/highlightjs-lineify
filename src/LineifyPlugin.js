@@ -13,7 +13,7 @@ class LineifyPlugin {
       if (typeof (element) == "string") {
          element = document.getElementById(element);
       }
-      let lineElements = [this.createSpan("code-line")];
+      let lineElements = [this.createSpan("lineify-line")];
       this._lineifyHelper(element, [], lineElements);
       // remove children
       while (element.firstChild) {
@@ -85,8 +85,8 @@ class LineifyPlugin {
          if (className) {
             for (let lineNumString of attr.value.split(",")) {
                let lineNum = parseInt(lineNumString)
-               if (lineNum && lineNum >= 0 && lineNum < lineElements.length) {
-                  lineElements[lineNum].classList.add(className);
+               if (lineNum && lineNum >= 1 && lineNum <= lineElements.length) {
+                  lineElements[lineNum - 1].classList.add(className);
                }
             }
          }
