@@ -26,7 +26,9 @@ class LineifyPlugin {
       // note that the element has been emptied and the line elements not yet added
       // the plugin is provided as this, to provide access to utility methods,
       // like createSpan
-      this.callback.call(this, element, lineElements, this.callbackOptions);
+      if (this.callback) {
+         this.callback.call(this, element, lineElements, this.callbackOptions);
+      }
 
       // add new line elements
       for (let i = 0; i < lineElements.length; i++) {

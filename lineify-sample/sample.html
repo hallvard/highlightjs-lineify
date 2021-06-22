@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+	</head>
+	<body>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+		<script src="../lineify-package/dist/highlightjs-lineify.min.js"></script>
+        <style>
+        .code-line.highlighted {
+	        background-color: #f2ffcc;
+        }
+        </style>
+
+        <h3>Sample 1</h3>
+        <div id='Sample1'>
+        <pre><code class="language-java" lineify-line-number-format="%s&#9;" lineify-highlighted-lines="5">public class Sample1 {
+
+    public static void main(String[] args) {
+        for (int i = 0; i < args.length; i++) {
+            System.out.println("Arg #" + i + ": " + args[i]);
+        }
+    }
+}</code></pre>
+        </div>
+
+        <h3>Sample 2</h3>
+        <div id='Sample2'>
+        <pre><code class="language-java" id='Sample2_java'>public class Sample2 {
+
+    public static void main(String[] args) {
+        for (int i = 0; i < args.length; i++) {
+            System.out.println("Arg #" + i + ": " + args[i]);
+        }
+    }
+}</code></pre>
+        </div>
+
+        <script>
+        function lineifyCallback(element, lineElements, config) {
+            if (element.getAttribute('id') == "Sample2_java") {
+                for (let i = 0; i < lineElements.length; i++) {
+                    let lineElement = lineElements[i];
+                    lineElement.insertBefore(this.createLineNumSpan(i + 1), lineElement.firstChild);
+                    if (i === 4) {
+                        lineElement.classList.add("highlighted");
+                    }
+                }
+            }
+        };
+        hljs.addPlugin(new LineifyPlugin(lineifyCallback));
+		hljs.highlightAll();
+        </script>
+    </body>
+</html>

@@ -15,7 +15,7 @@ they're finally added to the surrounding elements that highlightjs operated on.
 ## Usage
 
 Import the hljs object as usual from the highlightjs module, and then import the LineifyPlugin class.
-The latter isn't currently published anywhere, but the [minified js file](dist/highlightjs-lineify.min.js) is in the dist folder.
+The latter isn't currently published anywhere, but the [minified js file](lineify-package/dist/highlightjs-lineify.min.js) is in the dist folder.
 
 Then register the plugin as follows:
 
@@ -39,9 +39,9 @@ function lineifyCallback(element, lineElements, config) {
 }
 ```
 
-Here we iterator over all line span elements and insert a new span element with the line number, as a new first element in the line.
+Here we iterate over all line span elements and insert a new span element with the line number, as a new first element in the line.
 
-Certain use cases, such as adding line numbers or marking specific lines with a CSS class, are expected to be common, and are therey supported more directly by using attributes on the parent `code`(or other) element.
+Certain use cases, such as adding line numbers or marking specific lines with a CSS class, are expected to be common, and are therey supported more directly by using attributes on the parent `code` (or other) element. For these use cases, you can omit the callback and config arguments to the LineifyPlugin constructor.
 
 ### Adding line numbers
 
