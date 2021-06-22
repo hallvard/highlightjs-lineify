@@ -14,8 +14,10 @@ they're finally added to the surrounding elements that highlightjs operated on.
 
 ## Usage
 
+(The [sample html file](lineify-sample/sample.html) includes what is explained below.)
+
 Import the hljs object as usual from the highlightjs module, and then import the LineifyPlugin class.
-The latter isn't currently published anywhere, but the [minified js file](lineify-package/dist/highlightjs-lineify.min.js) is in the dist folder.
+The latter isn't currently published anywhere, but the [minified js file](lineify-package/dist/highlightjs-lineify.min.js) is in the lineify-package/dist folder.
 
 Then register the plugin as follows:
 
